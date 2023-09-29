@@ -53,16 +53,74 @@ function playbtnanimation(){
 
 playbtnanimation();
 
-document.querySelectorAll('.circle').forEach(cir => {
-    cir.addEventListener('mousemove',(dets)=>{
+function circlesanimation(){
+
+var colors = ['rgba(184, 184, 184, 0.864)' , 'rgba(204, 181, 159, 0.864)', 'rgba(204, 181, 159, 0.664)' ,'rgba(149, 196, 122, 0.824)']
+document.querySelectorAll('.box').forEach((box,idx) => {
+    let col = colors[idx];
+    box.addEventListener('mousemove',(dets)=>{
+        gsap.to('.circle',{
+            top:dets.y-100,
+            left:dets.x-100
+        })
+    })
         
-    })
-
-    cir.addEventListener('mouseenter',()=>{
-        cir.style.transform = 'scale(1)'
-    })
-
-    cir.addEventListener('mouseleave',()=>{
-        cir.style.transform = 'scale(0)'
-    })
+        box.addEventListener('mouseenter',()=>{
+            document.querySelector('.circle').style.transform = 'scale(1)';
+            document.querySelector('.circle').style.backgroundColor = col;
+        })
+        
+        box.addEventListener('mouseleave',()=>{
+            document.querySelector('.circle').style.transform = 'scale(0)';
+        })
 });
+
+}
+circlesanimation();
+
+
+gsap.to('.links a',{
+    opacity:0,
+    y:-14,
+    scrollTrigger:{
+        trigger:".links a",
+        scroller : "#main",
+        // markers:true,
+        start:"top 2%",
+        end:"top -5%",
+        scrub:true,
+    }
+})
+
+gsap.to('.logos svg',{
+    transform:'translateY(-150%)',
+    scrollTrigger:{
+        trigger:".logos svg",
+        scroller: "#main",
+        start:"top 2%",
+        end:"top -5%",
+        scrub:true
+    }
+})
+
+gsap.from('.navbar', {
+    opacity:0,
+})
+
+gsap.from('.page1 h1',{
+    x:100,
+    opacity:0,
+    duration:1,
+    stagger:1
+})
+
+
+gsap.from('.page6 .part2' ,{
+    opacity:0,
+    scrollTrigger:{
+        trigger:".page6",
+        scroller: "#main",
+        start:"top 30%",
+        scrub:true
+    }
+})
