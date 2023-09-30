@@ -116,11 +116,12 @@ gsap.from('.page1 h1',{
 
 
 gsap.from('.page6 .part2' ,{
-    opacity:0,
+    opacity:0.4,
     scrollTrigger:{
         trigger:".page6",
         scroller: "#main",
-        start:"top 30%",
+        start:"top 70%",
+        // markers:true,
         scrub:true
     }
 })

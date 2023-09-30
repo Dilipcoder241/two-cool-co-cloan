@@ -284,7 +284,7 @@ body{
 }
 
 .userbox input::placeholder{
-    font-size: 34px;
+    font-size: 2rem;
     color: #000;
 }
 
@@ -340,5 +340,115 @@ body{
     transform: scale(0);
     transition: all linear 0.2s;
     pointer-events: none;
+}
+
+
+
+@media screen and (max-width:700px) {
+    .navbar .links a{
+        display: none;
+    }
+    .navbar{
+        position: sticky;
+        top:0;
+    }
+
+    .page1{
+        min-height: 50vh;
+    }
+    .video-container{
+        min-height: 30vh;
+    }
+
+    .page3{
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    .elem{
+        min-height: 90vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .page4{
+        display: flex;
+        flex-direction: column;
+        padding: 20px 12px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .page4 .left{
+        font-size: 0.6rem;
+        line-height: 1rem;
+        width: 100%;
+        padding: 30px 10px 0px 0px;  
+    }
+    
+    .rigth{
+        width: 100%;
+        opacity: 0.8;
+        padding: 30px 10px;
+        align-items: center;
+    }
+    .rigth p {
+        font-size: 0.8rem;
+    }
+    
+    .page5  .box{
+        height: 50vh;
+        width: 65%;
+    }
+
+    .page6{
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 30px 10px;
+        width: 100%;
+    }
+
+    .page6 .part1{
+        padding-left: 40px;
+        width: 100%;
+    }
+
+    .page6 .part2{
+        height:30vh;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        opacity: 1;
+    }
+
+    .userbox input::placeholder{
+        font-size: 1rem;
+    }
+
+    .footer .logo svg{
+        height: 100px;
+    }
+
+    .footer .p3{
+        padding: 10px 20px;
+        font-size: 0.7rem;
+    }
+
+    .elem .smallbar{
+        top:50%;
+        left: 50%;
+    }
+    
+    .smallbar .bar2 div{
+        padding: 10px 5px;
+        width: 50%;
+    }
+    
+    .smallbar .bar2 div img{
+        height: 100px;
+    }
 }
 
